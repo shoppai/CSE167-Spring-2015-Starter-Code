@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D42FFC221AAFC90E006F8E9C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D42FFC211AAFC90E006F8E9C /* main.cpp */; };
-		D42FFC241AAFC90E006F8E9C /* CSE167_Spring_2015_Starter_Code.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D42FFC231AAFC90E006F8E9C /* CSE167_Spring_2015_Starter_Code.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +17,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				D42FFC241AAFC90E006F8E9C /* CSE167_Spring_2015_Starter_Code.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -27,7 +25,6 @@
 /* Begin PBXFileReference section */
 		D42FFC1E1AAFC90E006F8E9C /* CSE167 Spring 2015 Starter Code */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CSE167 Spring 2015 Starter Code"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42FFC211AAFC90E006F8E9C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		D42FFC231AAFC90E006F8E9C /* CSE167_Spring_2015_Starter_Code.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CSE167_Spring_2015_Starter_Code.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				D42FFC211AAFC90E006F8E9C /* main.cpp */,
-				D42FFC231AAFC90E006F8E9C /* CSE167_Spring_2015_Starter_Code.1 */,
 			);
 			path = "CSE167 Spring 2015 Starter Code";
 			sourceTree = "<group>";
@@ -227,6 +223,7 @@
 				D42FFC291AAFC90E006F8E9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
