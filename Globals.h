@@ -1,5 +1,5 @@
-#ifndef CSE167_Spring_2015_Starter_Code_Globals_h
-#define CSE167_Spring_2015_Starter_Code_Globals_h
+#ifndef CSE167_Globals_h
+#define CSE167_Globals_h
 
 #include "Camera.h"
 #include "Cube.h"

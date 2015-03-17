@@ -1,5 +1,5 @@
-#ifndef __CSE167_Proj6__Texture__
-#define __CSE167_Proj6__Texture__
+#ifndef CSE167_Texture_h
+#define CSE167_Texture_h
 
 #include <iostream>
 #include <string>

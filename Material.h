@@ -1,5 +1,5 @@
-#ifndef __CSE167_Proj4__Material__
-#define __CSE167_Proj4__Material__
+#ifndef CSE167_Material_h
+#define CSE167_Material_h
 
 #include <iostream>
 #include "Color.h"
@@ -15,6 +15,10 @@ protected:
     Color emiColor;
     
     float shininess;
+    
+    //A color variable used in Projects 1, 2, and 3
+    //This can be removed once materials are implemented
+    Color color;
     
 public:
     
@@ -40,6 +44,10 @@ public:
     
     void setShininess(float s)     { shininess = s; }
     float getShininess(void)       { return shininess; }
+    
+    
+    void setColor(Color c) { color = c; }
+    Color getColor()       { return color; }
     
 };
 

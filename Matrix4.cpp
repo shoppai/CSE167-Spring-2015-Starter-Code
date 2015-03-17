@@ -69,7 +69,6 @@ void Matrix4::identity()
     std::memcpy(m, ident, sizeof(m));
 }
 
-//for this i made a new matrix and returned that
 Matrix4 Matrix4::multiply(Matrix4 a)
 {
     Matrix4 temp;
@@ -82,6 +81,7 @@ Matrix4 Matrix4::multiply(Matrix4 a)
     
     //Implement a more performant Matrix * Matrix multiplication
     //Hint: Loops!
+    //Hint for the ambitious: SIMD!
     
     Vector4 row1(m[0][0], m[1][0], m[2][0], m[3][0]);
     Vector4 row2(m[0][1], m[1][1], m[2][1], m[3][1]);
@@ -101,7 +101,6 @@ Matrix4 Matrix4::multiply(Matrix4 a)
     return temp;
 }
 
-//for this i made a new matrix and returned that
 Vector4 Matrix4::multiply(Vector4 a)
 {
     Vector4 temp;
@@ -127,8 +126,6 @@ Matrix4 Matrix4::operator * (Matrix4 a)
     return multiply(a);
 }
 
-//created a new matrix and stored the change in there.
-//did not edit the old data.
 Matrix4 Matrix4::makeRotateX(float angle)
 {
     identity();
@@ -138,7 +135,6 @@ Matrix4 Matrix4::makeRotateX(float angle)
     return *this;
 }
 
-// angle in radians
 Matrix4 Matrix4::makeRotateY(float angle)
 {
     identity();
@@ -151,8 +147,6 @@ Matrix4 Matrix4::makeRotateY(float angle)
     return *this;
 }
 
-//created a new matrix and store the change in there.
-//did not edit the old data.
 Matrix4 Matrix4::makeRotateZ(float angle)
 {
     identity();
@@ -162,7 +156,6 @@ Matrix4 Matrix4::makeRotateZ(float angle)
     return *this;
 }
 
-/* base on lecture slide 44 */
 Matrix4 Matrix4::makeRotateArbitrary(Vector3 a, float angle)
 {
     identity();

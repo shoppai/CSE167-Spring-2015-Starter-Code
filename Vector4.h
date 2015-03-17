@@ -1,22 +1,21 @@
-#ifndef CSE167_Proj1_Vector4_h
-#define CSE167_Proj1_Vector4_h
+#ifndef CSE167_Vector4_h
+#define CSE167_Vector4_h
 class Vector3;
 class Vector4
 {
 protected:
     
-    float m[4];   // matrix elements
+    float m[4];
     
 public:
     
-    Vector4();        // constructor
+    Vector4();
     Vector4(float, float, float);
     Vector4(float, float, float, float);
     
     float* ptr();
     float& operator [] (int);
     
-    //Public methods go here
     void set(float,float,float,float);
     float get(int);
     

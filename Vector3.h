@@ -1,5 +1,5 @@
-#ifndef CSE167_Proj1_Vector3_h
-#define CSE167_Proj1_Vector3_h
+#ifndef CSE167_Vector3_h
+#define CSE167_Vector3_h
 
 class Vector3
 {
@@ -15,7 +15,6 @@ public:
     
     float* ptr();
     
-    //Public methods go here
     void set(float, float, float);
     void set(int index, float value);
     float get(int);

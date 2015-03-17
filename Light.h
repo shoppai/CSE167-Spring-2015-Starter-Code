@@ -1,5 +1,5 @@
-#ifndef __CSE167_Proj4__Light__
-#define __CSE167_Proj4__Light__
+#ifndef CSE167_Light_h
+#define CSE167_Light_h
 
 #include "Matrix4.h"
 #include "Color.h"

@@ -75,10 +75,10 @@ void Cube::draw(DrawData& data)
     glVertex3f( halfSize, -halfSize,  halfSize);
     glVertex3f(-halfSize, -halfSize,  halfSize);
     
-    //The above glNormal and glVertex calls can be replaced with a glut convenience function
-    //glutSolidCube(size);
-    
     glEnd();
+    
+    //The above glBegin, glEnd, glNormal and glVertex calls can be replaced with a glut convenience function
+    //glutSolidCube(size);
     
     glPopMatrix();
 }

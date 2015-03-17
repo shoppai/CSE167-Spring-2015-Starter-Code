@@ -56,7 +56,7 @@ Vector3 Vector3::add(Vector3 a)
     return temp;
 }
 
-Vector3 Vector3::operator + (Vector3 a) //feed intor add operation with 2 parm
+Vector3 Vector3::operator + (Vector3 a)
 {
     return add(a);
 }
@@ -93,7 +93,7 @@ Vector3 Vector3::scale(float s)
     return temp;
 }
 
-Vector3 Vector3::operator * (float s) //feed intor mul operation with 2 parm
+Vector3 Vector3::operator * (float s)
 {
     return scale(s);
 }
@@ -138,7 +138,7 @@ Vector3 Vector3::normalize(void)
     return temp;
 }
 
-void Vector3::print(void)//use cout or printf 
+void Vector3::print(void)
 {
-    std::cout << "(x:" << m[0] <<  ", y:" << m[1] << ", z:" << m[2] << ")" << std::endl;
+    std::cout << "<x:" << m[0] <<  ", y:" << m[1] << ", z:" << m[2] << ">" << std::endl;
 }

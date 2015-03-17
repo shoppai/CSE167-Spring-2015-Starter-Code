@@ -1,5 +1,5 @@
-#ifndef _MATRIX4_H_
-#define _MATRIX4_H_
+#ifndef CSE167_Matrix4_h
+#define CSE167_Matrix4_h
 
 #include "Vector4.h"
 #include "Vector3.h"
@@ -8,11 +8,11 @@ class Matrix4
 {
 protected:
     
-    float m[4][4];   // matrix elements
+    float m[4][4];
     
 public:
     
-    Matrix4();        // constructor
+    Matrix4();
     Matrix4(float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float);
     
     void set(float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float);
@@ -20,9 +20,9 @@ public:
     
     Matrix4& operator = (Matrix4);
     
-    float* ptr();  // return pointer to matrix elements
+    float* ptr();
     
-    void identity();  // create identity matrix
+    void identity();
     
     Matrix4 multiply( Matrix4);
     Matrix4 operator * (Matrix4);
@@ -30,7 +30,7 @@ public:
     Vector3 multiply( Vector3);
     
     Matrix4 makeRotateX(float);
-    Matrix4 makeRotateY(float); // rotation about y axis
+    Matrix4 makeRotateY(float);
     Matrix4 makeRotateZ(float);
     Matrix4 makeRotateArbitrary(Vector3, float);
     

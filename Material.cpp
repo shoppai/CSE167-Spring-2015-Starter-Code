@@ -14,6 +14,10 @@ Material::Material()
     setSpecularColor(Color::specularMaterialDefault());
     setEmissionColor(Color::emissionMaterialDefault());
     setShininess(10.0);
+    
+    //Set the initial color to a random pastel color
+    //Can be removed once materials are implemented
+    setColor(Color::randomPastel());
 }
 
 Material::~Material()
@@ -27,7 +31,8 @@ void Material::apply(void)
     //Hint: Lookup how glMaterialfv works
     
     //Set the color property (can be removed once materials are implemented)
-    glColor3fv(difColor.ptr());
+    //Used for projects 1, 2, and 3
+    glColor3fv(color.ptr());
 }
 
 

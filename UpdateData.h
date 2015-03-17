@@ -1,5 +1,5 @@
-#ifndef __CSE169_ProjectBase__UpdateData__
-#define __CSE169_ProjectBase__UpdateData__
+#ifndef CSE167_UpdateData_h
+#define CSE167_UpdateData_h
 
 #include <iostream>
 

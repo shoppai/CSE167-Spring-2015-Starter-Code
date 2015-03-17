@@ -1,5 +1,5 @@
-#ifndef __CSE167_Proj5__Drawable__
-#define __CSE167_Proj5__Drawable__
+#ifndef CSE167_Drawable_h
+#define CSE167_Drawable_h
 
 #include <iostream>
 #include "Matrix4.h"

@@ -1,5 +1,5 @@
-#ifndef _WINDOW_H_
-#define _WINDOW_H_
+#ifndef CSE167_Window_h
+#define CSE167_Window_h
 
 class Window	  // OpenGL output window related routines
 {

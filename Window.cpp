@@ -22,34 +22,23 @@ void Window::initialize(void)
     //Setup the light
     Vector4 lightPos(0.0, 10.0, 15.0, 1.0);
     Globals::light.setPosition(lightPos);
-    Globals::light.setAmbientColor(Color::ambientDefault());
-    Globals::light.setDiffuseColor(Color::diffuseDefault());
-    Globals::light.setSpecularColor(Color::specularDefault());
     Globals::light.setQuadraticAttenuation(0.02);
     
     //Initialize cube matrix:
     Globals::cube.toWorld.identity();
     
     //Setup the cube's material properties
-    Color amb(0x030303ff);
-    Color dif(0x23ff27ff);
-    Color spc(0xffffffff);
-    Color emi(0x064402ff);
-    float shiny = 10.0;
-    Globals::cube.material.setAmbientColor(amb);
-    Globals::cube.material.setDiffuseColor(dif);
-    Globals::cube.material.setSpecularColor(spc);
-    Globals::cube.material.setEmissionColor(emi);
-    Globals::cube.material.setShininess(shiny);
-    
-    //Set up a static time delta for update calls
-    Globals::updateData.dt = 1.0/60.0;// 60 fps
+    Color color(0x23ff27ff);
+    Globals::cube.material.setColor(color);
 }
 
 //----------------------------------------------------------------------------
 // Callback method called when system is idle.
 void Window::idleCallback()
 {
+    //Set up a static time delta for update calls
+    Globals::updateData.dt = 1.0/60.0;// 60 fps
+    
     //Rotate cube; if it spins too fast try smaller values and vice versa
     Globals::cube.spin(0.0005);
     

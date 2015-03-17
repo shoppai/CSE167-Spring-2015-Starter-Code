@@ -1,5 +1,5 @@
-#ifndef __CSE169_ProjectBase__RenderData__
-#define __CSE169_ProjectBase__RenderData__
+#ifndef CSE167_RenderData_h
+#define CSE167_RenderData_h
 
 #include <iostream>
 

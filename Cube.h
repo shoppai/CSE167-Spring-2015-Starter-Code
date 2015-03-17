@@ -1,5 +1,5 @@
-#ifndef _CUBE_H_
-#define _CUBE_H_
+#ifndef CSE167_Cube_h
+#define CSE167_Cube_h
 
 #include "Drawable.h"
 
