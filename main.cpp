@@ -13,7 +13,6 @@
 #include "Matrix4.h"
 #include "Globals.h"
 
-using namespace std;
 
 int main(int argc, char *argv[])
 {
@@ -35,10 +34,14 @@ int main(int argc, char *argv[])
     //Enable lighting:
     glEnable(GL_LIGHTING);
     
-    //Install callback functions:
+    //Register callback functions:
     glutDisplayFunc(Window::displayCallback);
     glutReshapeFunc(Window::reshapeCallback);
     glutIdleFunc(Window::idleCallback);
+    //Register the callback for the keyboard
+    //Register the callback for the keyboard function keys
+    //Register the callback for the mouse
+    //Register the callback for the mouse motion
     
     //Initialize the Window:
     //The body of this function is a great place to load textures, shaders, etc.

@@ -11,8 +11,6 @@
 #include "Matrix4.h"
 #include "Globals.h"
 
-using namespace std;
-
 int Window::width  = 512;   //Set window width in pixels here
 int Window::height = 512;   //Set window height in pixels here
 

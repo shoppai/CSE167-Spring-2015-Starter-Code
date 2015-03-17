@@ -45,7 +45,7 @@ Color::~Color()
 
 float* Color::ptr(void)
 {
-    //Returns a pointer to the first element
+    //Returns a pointer to the color array
     return &c[0];
 }
 
