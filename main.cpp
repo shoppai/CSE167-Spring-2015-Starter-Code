@@ -16,23 +16,20 @@
 
 int main(int argc, char *argv[])
 {
-    glutInit(&argc, argv);      	      	      // initialize GLUT
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);   // open an OpenGL context with double buffering, RGB colors, and depth buffering
-    glutInitWindowSize(Window::width, Window::height);      // set initial window size
-    glutCreateWindow("OpenGL Cube");    	      // open window and set window title
+    glutInit(&argc, argv);                                      //Initialize GLUT
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);   //Open an OpenGL context with double buffering, RGB colors, and depth buffering
+    glutInitWindowSize(Window::width, Window::height);          //Set initial window size
+    glutCreateWindow("UCSD CSE 167 - Project 1 - OpenGL Cube"); //Open window and set window title
     
-    glEnable(GL_DEPTH_TEST);            	      // enable depth buffering
-    glClear(GL_DEPTH_BUFFER_BIT);       	      // clear depth buffer
-    glClearColor(0.0, 0.0, 0.0, 0.0);   	      // set clear color to black
-    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);  // set polygon drawing mode to fill front and back of each polygon
-    glDisable(GL_CULL_FACE);     // disable backface culling to render both sides of polygons
-    glShadeModel(GL_SMOOTH);             	      // set shading to smooth
+    glEnable(GL_DEPTH_TEST);                                    //Enable depth buffering
+    glClear(GL_DEPTH_BUFFER_BIT);                               //Clear depth buffer
+    glClearColor(0.0, 0.0, 0.0, 0.0);                           //Set clear color to black
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);                  //Set polygon drawing mode to fill front and back of each polygon
+    glDisable(GL_CULL_FACE);                                    //Disable backface culling to render both sides of polygons
+    glShadeModel(GL_SMOOTH);                                    //Set shading to smooth
     
-    //Enable color materials:
-    glEnable(GL_COLOR_MATERIAL);
-    
-    //Enable lighting:
-    glEnable(GL_LIGHTING);
+    glEnable(GL_COLOR_MATERIAL);                                //Enable color materials
+    glEnable(GL_LIGHTING);                                      //Enable lighting
     
     //Register callback functions:
     glutDisplayFunc(Window::displayCallback);

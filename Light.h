@@ -10,48 +10,27 @@ class Light
     
 protected:
     
-    Vector4 position;
-    
     int bindID = -1;
     
-    Color ambColor;
-    Color difColor;
-    Color spcColor;
+public:
     
-    float constAtten;
-    float linAtten;
-    float quadAtten;
+    Vector4 position;
+    
+    Color ambientColor;
+    Color diffuseColor;
+    Color specularColor;
+    
+    float constantAttenuation;
+    float linearAttenuation;
+    float quadraticAttenuation;
     
 public:
     
     Light();
-    ~Light(void);
+    virtual ~Light(void);
     
     void bind(int);
     void unbind(void);
-    
-    
-    void setAmbientColor(Color);
-    Color getAmbientColor();
-    
-    void setDiffuseColor(Color);
-    Color getDiffuseColor();
-    
-    void setSpecularColor(Color);
-    Color getSpecularColor();
-    
-    
-    void setConstantAttenuation(float);
-    float getConstantAttenuation(void);
-    
-    void setLinearAttenuation(float);
-    float getLinearAttenuation(void);
-    
-    void setQuadraticAttenuation(float);
-    float getQuadraticAttenuation(void);
-    
-    void setPosition(Vector4&);
-    Vector4 getPosition();
     
 };
 

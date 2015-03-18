@@ -19,15 +19,15 @@ void Window::initialize(void)
 {
     //Setup the light
     Vector4 lightPos(0.0, 10.0, 15.0, 1.0);
-    Globals::light.setPosition(lightPos);
-    Globals::light.setQuadraticAttenuation(0.02);
+    Globals::light.position = lightPos;
+    Globals::light.quadraticAttenuation = 0.02;
     
     //Initialize cube matrix:
     Globals::cube.toWorld.identity();
     
     //Setup the cube's material properties
     Color color(0x23ff27ff);
-    Globals::cube.material.setColor(color);
+    Globals::cube.material.color = color;
 }
 
 //----------------------------------------------------------------------------

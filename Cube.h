@@ -11,6 +11,7 @@ public:
     float size;
     
     Cube(float);
+    virtual ~Cube(void);
     
     virtual void draw(DrawData&);
     virtual void update(UpdateData&);

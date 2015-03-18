@@ -14,6 +14,11 @@ Cube::Cube(float size) : Drawable()
     this->size = size;
 }
 
+Cube::~Cube()
+{
+    //Delete any dunamically allocated memory/objects here
+}
+
 
 void Cube::draw(DrawData& data)
 {

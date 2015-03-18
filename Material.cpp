@@ -9,15 +9,15 @@
 Material::Material()
 {
     //Material setup goes hurr
-    setAmbientColor(Color::ambientMaterialDefault());
-    setDiffuseColor(Color::diffuseMaterialDefault());
-    setSpecularColor(Color::specularMaterialDefault());
-    setEmissionColor(Color::emissionMaterialDefault());
-    setShininess(10.0);
+    ambientColor = Color::ambientMaterialDefault();
+    diffuseColor = Color::diffuseMaterialDefault();
+    specularColor = Color::specularMaterialDefault();
+    emissionColor = Color::emissionMaterialDefault();
+    shininess = 10.0;
     
     //Set the initial color to a random pastel color
     //Can be removed once materials are implemented
-    setColor(Color::randomPastel());
+    color = Color::randomPastel();
 }
 
 Material::~Material()
