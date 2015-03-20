@@ -57,7 +57,7 @@ Vector4 Vector4::add(Vector4& a)
     return temp;
 }
 
-Vector4 Vector4::operator + (Vector4 a) 
+Vector4 Vector4::operator + (Vector4 a)
 {
 	return add(a);
 }

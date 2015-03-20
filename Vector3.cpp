@@ -44,12 +44,12 @@ float Vector3::get(int loc)
 
 float& Vector3::operator [] (int loc)
 {
-	return m[loc];
+    return m[loc];
 }
 
 Vector3 Vector3::add(Vector3 a)
 {
-	Vector3 temp;
+    Vector3 temp;
     
     //
     
@@ -63,7 +63,7 @@ Vector3 Vector3::operator + (Vector3 a)
 
 Vector3 Vector3::subtract(Vector3 a)
 {
-	Vector3 temp;
+    Vector3 temp;
     
     //
     
@@ -77,7 +77,7 @@ Vector3 Vector3::operator - (Vector3 a)
 
 Vector3 Vector3::negate(void)
 {
-	Vector3 temp;
+    Vector3 temp;
     
     //
     
@@ -86,7 +86,7 @@ Vector3 Vector3::negate(void)
 
 Vector3 Vector3::scale(float s)
 {
-	Vector3 temp;
+    Vector3 temp;
     
     //
     
@@ -103,12 +103,12 @@ float Vector3::dot(Vector3 a)
 {
     //
     
-	return 0.0;
+    return 0.0;
 }
 
 Vector3 Vector3::cross(Vector3 a)
 {
-	Vector3 temp;
+    Vector3 temp;
     
     //
     
@@ -131,7 +131,7 @@ float Vector3::magnitude(void)
 
 Vector3 Vector3::normalize(void)
 {
-	Vector3 temp;
+    Vector3 temp;
     
     //
     
