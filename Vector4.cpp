@@ -32,25 +32,25 @@ float* Vector4::ptr()
 
 void Vector4::set(float x, float y, float z, float w)
 {
-	m[0] = x;
-	m[1] = y;
-	m[2] = z;
-	m[3] = w;
+    m[0] = x;
+    m[1] = y;
+    m[2] = z;
+    m[3] = w;
 }
 
 float Vector4::get(int loc)
 {
-	return m[loc];
+    return m[loc];
 }
 
 float& Vector4::operator [] (int loc)
 {
-	return m[loc];
+    return m[loc];
 }
 
 Vector4 Vector4::add(Vector4& a)
 {
-	Vector4 temp;
+    Vector4 temp;
     
     //
     
@@ -59,12 +59,12 @@ Vector4 Vector4::add(Vector4& a)
 
 Vector4 Vector4::operator + (Vector4 a)
 {
-	return add(a);
+    return add(a);
 }
 
 Vector4 Vector4::subtract(Vector4& a)
 {
-	Vector4 temp;
+    Vector4 temp;
     
     //
     
@@ -73,7 +73,7 @@ Vector4 Vector4::subtract(Vector4& a)
 
 Vector4 Vector4::operator - (Vector4 a)
 {
-	return subtract(a);
+    return subtract(a);
 }
 
 void Vector4::dehomogenize()
