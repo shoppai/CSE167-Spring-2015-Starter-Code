@@ -71,10 +71,10 @@ void Matrix4::identity()
 
 Matrix4 Matrix4::multiply(Matrix4 a)
 {
-    Matrix4 temp;
+    Matrix4 b;
     
     //The current implementation below is not very efficient:
-    //It allocates an additional 8 vectors on the stack
+    //It allocates an additional 8 vectors on the stack and calls their constructors
     //It also calls off to additional functions (which create even more vectors!)
     //Which results in a lot of time being wasted on memory operations
     //This is bad, really bad, ultra bad D:
@@ -93,31 +93,31 @@ Matrix4 Matrix4::multiply(Matrix4 a)
     Vector4 col3(a.m[2][0], a.m[2][1], a.m[2][2], a.m[2][3]);
     Vector4 col4(a.m[3][0], a.m[3][1], a.m[3][2], a.m[3][3]);
 
-    temp.set(row1.dot(col1), row2.dot(col1), row3.dot(col1), row4.dot(col1),
+    b.set(row1.dot(col1), row2.dot(col1), row3.dot(col1), row4.dot(col1),
              row1.dot(col2), row2.dot(col2), row3.dot(col2), row4.dot(col2),
              row1.dot(col3), row2.dot(col3), row3.dot(col3), row4.dot(col3),
              row1.dot(col4), row2.dot(col4), row3.dot(col4), row4.dot(col4) );
 
-    return temp;
+    return b;
 }
 
 Vector4 Matrix4::multiply(Vector4 a)
 {
-    Vector4 temp;
+    Vector4 b;
     
     //Implement Matrix * Vector4 multiplication
     
-    return temp;
+    return b;
 }
 
-Vector3 Matrix4::multiply(Vector3 v)
+Vector3 Matrix4::multiply(Vector3 a)
 {
-    Vector3 temp;
+    Vector3 b;
     
     //Implement Matrix * Vector3 multiplication
     //Assume the 4th component is 0
     
-    return temp;
+    return b;
 }
 
 
@@ -193,15 +193,15 @@ Matrix4 Matrix4::makeTranslate(float x, float y, float z)
 
 Matrix4 Matrix4::transpose(void)
 {
-    Matrix4 ts;
+    Matrix4 b;
     for(int x = 0; x < 4; ++x)
     {
         for(int y = 0; y < 4; ++y)
         {
-            ts.m[y][x] = m[x][y];
+            b.m[y][x] = m[x][y];
         }
     }
-    return ts;
+    return b;
 }
 
 //Hint: Try basing this on code by cool people on the internet

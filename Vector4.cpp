@@ -50,11 +50,11 @@ float& Vector4::operator [] (int loc)
 
 Vector4 Vector4::add(Vector4& a)
 {
-    Vector4 temp;
+    Vector4 b;
     
     //
     
-    return temp;
+    return b;
 }
 
 Vector4 Vector4::operator + (Vector4 a)
@@ -64,11 +64,11 @@ Vector4 Vector4::operator + (Vector4 a)
 
 Vector4 Vector4::subtract(Vector4& a)
 {
-    Vector4 temp;
+    Vector4 b;
     
     //
     
-    return temp;
+    return b;
 }
 
 Vector4 Vector4::operator - (Vector4 a)
@@ -83,8 +83,8 @@ void Vector4::dehomogenize()
 
 Vector3 Vector4::toVector3()
 {
-    Vector3 temp(m[0], m[1], m[2]);
-    return temp;
+    Vector3 b(m[0], m[1], m[2]);
+    return b;
 }
 
 float Vector4::dot(Vector4 a)

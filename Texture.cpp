@@ -84,6 +84,7 @@ unsigned char* Texture::loadPPM(const char* filename, int& width, int& height)
     char* retval_fgets;
     size_t retval_sscanf;
     
+    //Open the texture file
     if((fp=fopen(filename, "rb")) == NULL)
     {
         std::cerr << "error reading ppm file, could not locate " << filename << std::endl;
