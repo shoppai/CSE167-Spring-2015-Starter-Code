@@ -25,7 +25,6 @@ Light::~Light()
     //Delete any dynamically allocated memory/objects here
 }
 
-
 void Light::bind(int id)
 {
     if(id < 0 || id > 7) {
@@ -60,4 +59,3 @@ void Light::unbind(void)
     glDisable(GL_LIGHT0 + bindID);
     bindID = -1;
 }
-

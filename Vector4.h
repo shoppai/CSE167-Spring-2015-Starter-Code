@@ -1,8 +1,11 @@
 #ifndef CSE167_Vector4_h
 #define CSE167_Vector4_h
+
 class Vector3;
+
 class Vector4
 {
+
 protected:
     
     float m[4];
@@ -34,6 +37,7 @@ public:
     float dot(Vector4);
     
     void print(void);
+    
 };
 
 #endif

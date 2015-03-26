@@ -8,14 +8,15 @@ class Camera
 private:
     
 protected:
-    Matrix4 c;                              //Camera Matrix
-    Matrix4 ci;                             //Inverse of Camera Matrix
+    
+    Matrix4 c;   //Camera Matrix
+    Matrix4 ci;  //Inverse of Camera Matrix
     
 public:
     
-    Vector3 e;                              //Center of Projection
-    Vector3 d;                              //Look At
-    Vector3 up;                             //Up Vector ^
+    Vector3 e;   //Center of Projection
+    Vector3 d;   //Look At
+    Vector3 up;  //Up Vector ^
     
     Camera(void);
     ~Camera(void);

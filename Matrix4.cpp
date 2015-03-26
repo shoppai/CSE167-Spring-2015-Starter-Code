@@ -1,5 +1,6 @@
 #include <math.h>
 #include <iostream>
+#include <iomanip>
 #include <cstring>
 #include "Matrix4.h"
 
@@ -48,15 +49,11 @@ float Matrix4::get(int vector,int element)
     return m[vector][element];
 }
 
-
 Matrix4& Matrix4::operator=(Matrix4 a)
 {
     std::memcpy(m, a.m, sizeof(m));
     return *this;
 }
-
-
-
 
 float* Matrix4::ptr()
 {
@@ -120,7 +117,6 @@ Vector3 Matrix4::multiply(Vector3 a)
     return b;
 }
 
-
 Matrix4 Matrix4::operator * (Matrix4 a)
 {
     return multiply(a);
@@ -165,7 +161,6 @@ Matrix4 Matrix4::makeRotateArbitrary(Vector3 a, float angle)
     return *this;
 }
 
-
 Matrix4 Matrix4::makeScale(float s)
 {
     return makeScale(s, s, s);
@@ -189,8 +184,6 @@ Matrix4 Matrix4::makeTranslate(float x, float y, float z)
     return *this;
 }
 
-
-
 Matrix4 Matrix4::transpose(void)
 {
     Matrix4 b;
@@ -205,6 +198,8 @@ Matrix4 Matrix4::transpose(void)
 }
 
 //Hint: Try basing this on code by cool people on the internet
+//In this class it is okay to use code from the internet
+//So long as you fully understand the code and can clearly explain it if asked to
 //http://stackoverflow.com/questions/2624422/efficient-4x4-matrix-inverse-affine-transform
 Matrix4 Matrix4::inverse(void)
 {
@@ -225,15 +220,35 @@ Matrix4 Matrix4::orthoNormalInverse(void)
     return b;
 }
 
-
 void Matrix4::print(void)
 {
-    for( int element = 0; element < 4; element++)
+    //Width constants and variables
+    static const int pointWidth = 1;
+    static const int precisionWidth = 4;
+    int integerWidth = 1;
+    
+    //Determine the necessary cell width
+    float* elementPtr = (float*)m;
+    float maxValue = *(elementPtr++);
+    while(elementPtr++ < ((float*)m+16)) if(*elementPtr > maxValue) maxValue = *elementPtr;
+    while(maxValue >= 10.0) { ++integerWidth; maxValue /= 10.0; }
+    
+    int cellWidth = integerWidth + pointWidth + precisionWidth;
+    
+    float cellValue;
+    
+    //Loop through the matrix elements, format each, and print them to screen
+    std::cout << std::fixed;
+    std::cout << std::setprecision(precisionWidth);
+    for(int element = 0; element < 4; element++)
     {
-        for( int vector = 0; vector < 4; vector++)
+        std::cout << std::setw(1) << (element == 0 ? "[" : " ");
+        for(int vector = 0; vector < 4; vector++)
         {
-            std::cout << "m[" << vector << "][" << element << "]: " << m[vector][element] << "\t";
+            cellValue =  m[vector][element];
+            std::cout << std::setw(cellWidth + (cellValue >= 0.0 ? 1 : 0)) << cellValue;
+            std::cout << std::setw(0) << (vector < 3 ? " " : "");
         }
-        std::cout << std::endl;
+        std::cout << std::setw(1) << (element == 3 ? "]" : " ") << std::endl;
     }
 }

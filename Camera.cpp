@@ -15,7 +15,7 @@ Camera::Camera()
 
 Camera::~Camera()
 {
-    
+    //Delete and dynamically allocated memory/objects here
 }
 
 Matrix4& Camera::getMatrix()

@@ -17,9 +17,8 @@ public:
     virtual void update(UpdateData&);
     
     void spin(float);
+    
 };
-
-
 
 #endif
 

@@ -6,7 +6,6 @@
     #include <GLUT/glut.h>
 #endif
 
-#include "Window.h"
 
 Sphere::Sphere(double radius, int slices, int stacks) : Drawable()
 {
@@ -34,7 +33,5 @@ void Sphere::update(UpdateData& data)
 {
     //
 }
-
-
 
 

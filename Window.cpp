@@ -32,6 +32,7 @@ void Window::initialize(void)
 
 //----------------------------------------------------------------------------
 // Callback method called when system is idle.
+// This is called at the start of every new "frame" (qualitatively)
 void Window::idleCallback()
 {
     //Set up a static time delta for update calls

@@ -20,5 +20,3 @@ void Drawable::update(UpdateData& data)
 {
     std::cout << "Warning: update() is not implemented" << std::endl;
 }
-
-

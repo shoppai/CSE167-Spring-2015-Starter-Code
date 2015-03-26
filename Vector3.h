@@ -3,6 +3,7 @@
 
 class Vector3
 {
+
 protected:
     
     float m[3];
@@ -43,6 +44,7 @@ public:
     Vector3 normalize(void);
     
     void print(void);
+    
 };
 
 #endif

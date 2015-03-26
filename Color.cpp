@@ -55,7 +55,6 @@ float& Color::operator [] (int i)
     return c[i];
 }
 
-
 Color Color::interpolate(Color& c1, float t)
 {
     t = clampf(0.0, 1.0, t);
@@ -64,7 +63,6 @@ Color Color::interpolate(Color& c1, float t)
                  (1.0 - t) * c[2] + t * c1[2],
                  (1.0 - t) * c[3] + t * c1[3]);
 }
-
 
 Color Color::red(void)
 {
@@ -122,7 +120,6 @@ Color Color::randomPastel(void)
     return Color(color);
 }
 
-
 Color Color::randomDarkPastel(void)
 {
     unsigned int color =
@@ -158,9 +155,6 @@ Color Color::randomDarkShade(void)
     return Color(color);
 }
 
-
-
-
 Color Color::ambientDefault(void)
 {
     return Color(0x111111FF);
@@ -175,9 +169,6 @@ Color Color::specularDefault(void)
 {
     return Color(0xffffffFF);
 }
-
-
-
 
 Color Color::ambientMaterialDefault(void)
 {
@@ -198,6 +189,4 @@ Color Color::emissionMaterialDefault(void)
 {
     return Color(0x000000FF);
 }
-
-
 

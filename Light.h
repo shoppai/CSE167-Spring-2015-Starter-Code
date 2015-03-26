@@ -34,5 +34,4 @@ public:
     
 };
 
-
-#endif /* defined(__CSE167_Proj4__Light__) */
+#endif

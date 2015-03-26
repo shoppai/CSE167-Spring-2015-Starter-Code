@@ -28,4 +28,4 @@ public:
     
 };
 
-#endif /* defined(__CSE167_Proj6__Texture__) */
+#endif

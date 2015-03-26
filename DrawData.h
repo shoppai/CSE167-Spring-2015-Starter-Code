@@ -9,10 +9,11 @@ class DrawData
 public:
     
     //Payload
+    //Place any objects here that you want to pass to a draw() call
     
     DrawData(void);
     ~DrawData(void);
     
 };
 
-#endif /* defined(__CSE169_ProjectBase__RenderData__) */
+#endif

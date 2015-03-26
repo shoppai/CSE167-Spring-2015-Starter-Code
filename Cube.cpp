@@ -16,7 +16,7 @@ Cube::Cube(float size) : Drawable()
 
 Cube::~Cube()
 {
-    //Delete any dunamically allocated memory/objects here
+    //Delete any dynamically allocated memory/objects here
 }
 
 
@@ -24,10 +24,14 @@ void Cube::draw(DrawData& data)
 {
     float halfSize = size/2.0;
     
+    //Apply the material properties
+    //From here forward anything drawn will be drawn with these material
     material.apply();
     
+    //Se the OpenGL Matrix mode to ModelView (used when drawing geometry)
     glMatrixMode(GL_MODELVIEW);
     
+    //Push a save state onto the matrix stack, and multiply in the toWorld matrix
     glPushMatrix();
     glMultMatrixf(toWorld.ptr());
     
@@ -85,6 +89,8 @@ void Cube::draw(DrawData& data)
     //The above glBegin, glEnd, glNormal and glVertex calls can be replaced with a glut convenience function
     //glutSolidCube(size);
     
+    //Pop the save state off the matrix stack
+    //This will undo the multiply we did earlier
     glPopMatrix();
 }
 
