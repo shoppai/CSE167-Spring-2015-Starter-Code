@@ -227,19 +227,22 @@ void Matrix4::print(void)
     static const int precisionWidth = 4;
     int integerWidth = 1;
     
-    //Determine the necessary cell width
+    //Determine the necessary width to the left of the decimal point
     float* elementPtr = (float*)m;
-    float maxValue = *(elementPtr++);
-    while(elementPtr++ < ((float*)m+16)) if(*elementPtr > maxValue) maxValue = *elementPtr;
+    float maxValue = fabsf(*(elementPtr++));
+    while(elementPtr++ < ((float*)m+16)) if(fabsf(*elementPtr) > maxValue) maxValue = fabsf(*elementPtr);
     while(maxValue >= 10.0) { ++integerWidth; maxValue /= 10.0; }
     
+    //Sum up the widths to determine the cell width needed
     int cellWidth = integerWidth + pointWidth + precisionWidth;
     
-    float cellValue;
-    
-    //Loop through the matrix elements, format each, and print them to screen
+    //Set the stream parameters for fixed number of digits after the decimal point
+    //and a set number of precision digits
     std::cout << std::fixed;
     std::cout << std::setprecision(precisionWidth);
+    
+    //Loop through the matrix elements, format each, and print them to screen
+    float cellValue;
     for(int element = 0; element < 4; element++)
     {
         std::cout << std::setw(1) << (element == 0 ? "[" : " ");
