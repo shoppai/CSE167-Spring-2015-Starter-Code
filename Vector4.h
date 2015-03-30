@@ -20,7 +20,6 @@ public:
     float& operator [] (int);
     
     void set(float,float,float,float);
-    float get(int);
     
     
     Vector4 add(Vector4&);
@@ -29,7 +28,7 @@ public:
     Vector4 subtract(Vector4&);
     Vector4 operator - (Vector4);
     
-    void dehomogenize();
+    Vector4 dehomogenize();
     
     
     Vector3 toVector3();

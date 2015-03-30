@@ -2,6 +2,7 @@
 #define CSE167_Light_h
 
 #include "Matrix4.h"
+#include "Vector4.h"
 #include "Color.h"
 #include <vector>
 

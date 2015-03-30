@@ -2,6 +2,7 @@
 #include <math.h>
 #include <iostream>
 #include <cstring>
+#include "Vector4.h"
 
 Vector3::Vector3()
 {
@@ -35,11 +36,6 @@ void Vector3::set(float x, float y, float z)
 void Vector3::set(int index, float value)
 {
     m[index] = value;
-}
-
-float Vector3::get(int loc)
-{
-    return m[loc];
 }
 
 float& Vector3::operator [] (int loc)
@@ -93,9 +89,32 @@ Vector3 Vector3::scale(float s)
     return b;
 }
 
-Vector3 Vector3::operator * (float s)
+Vector3 Vector3::multiply(float a)
 {
-    return scale(s);
+    Vector3 b;
+    
+    //
+    
+    return b;
+}
+
+Vector3 Vector3::operator * (float a)
+{
+    return multiply(a);
+}
+
+Vector3 Vector3::multiply(Vector3 a)
+{
+    Vector3 b;
+    
+    //Coomponent-wise multiplication
+    
+    return b;
+}
+
+Vector3 Vector3::operator * (Vector3 a)
+{
+    return multiply(a);
 }
 
 
@@ -135,6 +154,12 @@ Vector3 Vector3::normalize(void)
     
     //
     
+    return b;
+}
+
+Vector4 Vector3::toVector4(float w)
+{
+    Vector4 b(m[0], m[1], m[2], w);
     return b;
 }
 

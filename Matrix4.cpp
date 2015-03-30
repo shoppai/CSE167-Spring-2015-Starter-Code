@@ -3,6 +3,8 @@
 #include <iomanip>
 #include <cstring>
 #include "Matrix4.h"
+#include "Vector4.h"
+#include "Vector3.h"
 
 Matrix4::Matrix4()
 {
@@ -98,6 +100,11 @@ Matrix4 Matrix4::multiply(Matrix4 a)
     return b;
 }
 
+Matrix4 Matrix4::operator * (Matrix4 a)
+{
+    return multiply(a);
+}
+
 Vector4 Matrix4::multiply(Vector4 a)
 {
     Vector4 b;
@@ -105,6 +112,11 @@ Vector4 Matrix4::multiply(Vector4 a)
     //Implement Matrix * Vector4 multiplication
     
     return b;
+}
+
+Vector4 Matrix4::operator * (Vector4 a)
+{
+    return multiply(a);
 }
 
 Vector3 Matrix4::multiply(Vector3 a)
@@ -117,7 +129,7 @@ Vector3 Matrix4::multiply(Vector3 a)
     return b;
 }
 
-Matrix4 Matrix4::operator * (Matrix4 a)
+Vector3 Matrix4::operator * (Vector3 a)
 {
     return multiply(a);
 }
@@ -182,6 +194,11 @@ Matrix4 Matrix4::makeTranslate(float x, float y, float z)
     //Configure this matrix to be a translation by vector 'a'
     
     return *this;
+}
+
+Matrix4 Matrix4::makeTranslate(Vector3 a)
+{
+    return makeTranslate(a[0], a[1], a[2]);
 }
 
 Matrix4 Matrix4::transpose(void)

@@ -1,6 +1,8 @@
 #ifndef CSE167_Vector3_h
 #define CSE167_Vector3_h
 
+class Vector4;
+
 class Vector3
 {
 
@@ -18,7 +20,6 @@ public:
     
     void set(float, float, float);
     void set(int index, float value);
-    float get(int);
     float& operator [] (int);
     
     Vector3 add(Vector3);
@@ -29,10 +30,10 @@ public:
     
     Vector3 negate(void);
     Vector3 scale(float);
-    Vector3 multiply(Vector3);
-    Vector3 operator * (Vector3);
     Vector3 multiply(float);
     Vector3 operator * (float);
+    Vector3 multiply(Vector3);
+    Vector3 operator * (Vector3);
     
     float dot(Vector3);
     Vector3 cross(Vector3);
@@ -42,6 +43,8 @@ public:
     float magnitude(void);
     
     Vector3 normalize(void);
+    
+    Vector4 toVector4(float);
     
     void print(void);
     

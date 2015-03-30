@@ -38,11 +38,6 @@ void Vector4::set(float x, float y, float z, float w)
     m[3] = w;
 }
 
-float Vector4::get(int loc)
-{
-    return m[loc];
-}
-
 float& Vector4::operator [] (int loc)
 {
     return m[loc];
@@ -76,9 +71,13 @@ Vector4 Vector4::operator - (Vector4 a)
     return subtract(a);
 }
 
-void Vector4::dehomogenize()
+Vector4 Vector4::dehomogenize()
 {
+    Vector4 b;
+    
     //
+    
+    return b;
 }
 
 Vector3 Vector4::toVector3()
