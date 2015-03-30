@@ -97,6 +97,7 @@
     <ClInclude Include="Vector4.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="Globals.h" />
+    <ClInclude Include="MathTestBench.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -115,6 +116,7 @@
     <ClCompile Include="Vector4.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="MathTestBench.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
