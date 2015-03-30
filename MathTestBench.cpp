@@ -12,6 +12,7 @@
 #include "Vector3.h"
 #include "Vector4.h"
 #include "Matrix4.h"
+#include <string>
 
 #define TEST_NAME_COL_WIDTH 46
 #define PI_OVER_2 1.57079
@@ -104,7 +105,7 @@ void MathTestBench::printTestLine(std::string name, bool pass)
 void MathTestBench::printTestsPassedLine(std::string name, int passed, int total)
 {
     std::cout << std::setw(TEST_NAME_COL_WIDTH) << name;
-    std::cout << std::setw(0) << ": " << ((passed == total) ? "Pass" : "FAIL (ノ｀Д)ノ彡 ┻━┻");
+    std::cout << std::setw(0) << ": " << ((passed == total) ? "Pass" : "***FAIL***");
     std::cout << " (" << passed << "/" << total << ")";
     std::cout << std::endl;
 }
