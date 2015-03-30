@@ -273,8 +273,8 @@ bool MathTestBench::test_v3_cross(void)
 {
     bool pass = 0x0;
     
-    Vector3 a(1, 0, 0);
-    Vector3 b(0, 0, 1);
+    Vector3 a(0, 0, 1);
+    Vector3 b(1, 0, 0);
     Vector3 c = a.cross(b);
     
     pass = approx(c[0], 0) && approx(c[1], 1) && approx(c[2], 0);
@@ -328,9 +328,9 @@ bool MathTestBench::test_v3_normalize(void)
     bool pass = 0x0;
     
     Vector3 a(1, 1, 1);
+    float r = 1.0 / a.magnitude();
     Vector3 b = a.normalize();
     
-    float r = 1.0 / a.magnitude();
     pass = approx(b[0], r) && approx(b[1], r) && approx(b[2], r);
     
     printTestLine("Vector3.normalize", pass);
@@ -682,7 +682,7 @@ bool MathTestBench::test_m4_transpose(void)
     float *aptr = a.ptr(), *bptr = b.ptr();
     for(int i = 0; i < 16; ++i)
         if(!approx(*(aptr + i), *(bptr + i)))
-            pass = false;
+            pass = 0x0;
     
     printTestLine("Matrix4.transpose", pass);
     return pass;
