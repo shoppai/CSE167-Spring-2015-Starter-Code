@@ -237,7 +237,7 @@ Matrix4 Matrix4::orthoNormalInverse(void)
     return b;
 }
 
-void Matrix4::print(void)
+void Matrix4::print(std::string comment)
 {
     //Width constants and variables
     static const int pointWidth = 1;
@@ -257,6 +257,9 @@ void Matrix4::print(void)
     //and a set number of precision digits
     std::cout << std::fixed;
     std::cout << std::setprecision(precisionWidth);
+    
+    //Print the comment
+    std::cout << comment << std::endl;
     
     //Loop through the matrix elements, format each, and print them to screen
     float cellValue;

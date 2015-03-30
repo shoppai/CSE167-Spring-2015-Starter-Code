@@ -1,6 +1,8 @@
 #ifndef CSE167_Vector3_h
 #define CSE167_Vector3_h
 
+#include <string>
+
 class Vector4;
 
 class Vector3
@@ -46,7 +48,7 @@ public:
     
     Vector4 toVector4(float);
     
-    void print(void);
+    void print(std::string);
     
 };
 

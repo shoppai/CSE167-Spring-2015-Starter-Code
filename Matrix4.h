@@ -1,6 +1,8 @@
 #ifndef CSE167_Matrix4_h
 #define CSE167_Matrix4_h
 
+#include <string>
+
 class Vector3;
 class Vector4;
 
@@ -51,7 +53,7 @@ public:
     Matrix4 inverse(void);
     Matrix4 orthoNormalInverse(void);
     
-    void print(void);
+    void print(std::string);
     
 };
 

@@ -91,7 +91,8 @@ float Vector4::dot(Vector4 a)
     return (m[0] * a.m[0]) + (m[1] * a.m[1]) + (m[2] * a.m[2]) + (m[3] * a.m[3]);
 }
 
-void Vector4::print(void)
+void Vector4::print(std::string comment)
 {
+    std::cout << comment << std::endl;
     std::cout << "<x:" << m[0] <<  ", y:" << m[1] << ", z:" << m[2] << ", w:" << m[3] << ">" << std::endl;
 }
