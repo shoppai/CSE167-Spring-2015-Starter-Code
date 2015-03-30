@@ -1,11 +1,3 @@
-//
-//  MathTestBench.cpp
-//  CSE167 Spring 2015 Starter Code
-//
-//  Created by Rex West on 2015/03/30.
-//  Copyright (c) 2015年 RexWest. All rights reserved.
-//
-
 #include "MathTestBench.h"
 #include <math.h>
 #include <iomanip>
