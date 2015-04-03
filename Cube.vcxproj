@@ -98,6 +98,7 @@
     <ClInclude Include="Window.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="MathTestBench.h" />
+    <ClInclude Include="OBJObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -117,6 +118,7 @@
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="MathTestBench.cpp" />
+    <ClCompile Include="OBJObject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
