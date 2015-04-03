@@ -25,10 +25,10 @@ void Cube::draw(DrawData& data)
     float halfSize = size/2.0;
     
     //Apply the material properties
-    //From here forward anything drawn will be drawn with these material
+    //From here forward anything drawn will be drawn with this material
     material.apply();
     
-    //Se the OpenGL Matrix mode to ModelView (used when drawing geometry)
+    //Set the OpenGL Matrix mode to ModelView (used when drawing geometry)
     glMatrixMode(GL_MODELVIEW);
     
     //Push a save state onto the matrix stack, and multiply in the toWorld matrix
@@ -107,8 +107,4 @@ void Cube::spin(float radians)
     
     toWorld = toWorld * rotation;
 }
-
-
-
-
 

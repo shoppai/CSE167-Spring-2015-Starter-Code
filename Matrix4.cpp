@@ -46,9 +46,9 @@ void Matrix4::set(float m00, float m01, float m02, float m03,
     m[3][3] = m33;
 }
 
-float Matrix4::get(int vector,int element)
+float Matrix4::get(int column, int element)
 {
-    return m[vector][element];
+    return m[column][element];
 }
 
 Matrix4& Matrix4::operator=(Matrix4 a)
