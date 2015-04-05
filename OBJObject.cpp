@@ -10,7 +10,7 @@
 #include "math.h"
 #include <sstream>
 #include <fstream>
-#include <list>
+#include <vector>
 
 #define deleteVector(__vect__) do {\
                                    iter = __vect__->begin();\
@@ -22,10 +22,10 @@
 
 OBJObject::OBJObject(std::string filename) : Drawable()
 {
-    this->vertices = new std::vector<Vector3*>();
-    this->normals = new std::vector<Vector3*>();
-    this->texcoords = new std::vector<Vector3*>();
-    this->faces = new std::vector<Face>();
+    this->vertices = new std::list<Vector3*>();
+    this->normals = new std::list<Vector3*>();
+    this->texcoords = new std::list<Vector3*>();
+    this->faces = new std::list<Face>();
     
     parse(filename);
 }
@@ -33,8 +33,8 @@ OBJObject::OBJObject(std::string filename) : Drawable()
 OBJObject::~OBJObject()
 {
     //Delete any dynamically allocated memory/objects here
-    std::vector<Vector3*>::iterator iter;
-    std::vector<Vector3*>::iterator end;
+    std::list<Vector3*>::iterator iter;
+    std::list<Vector3*>::iterator end;
     
     deleteVector(vertices);
     deleteVector(normals);
