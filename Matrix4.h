@@ -51,7 +51,10 @@ public:
     
     Matrix4 transpose(void);
     Matrix4 inverse(void);
-    Matrix4 orthoNormalInverse(void);
+    Matrix4 rigidInverse(void);
+    
+    Matrix4 makePerspectiveProjection(float, float, float, float, float);
+    Matrix4 makeViewport(float, float, float, float);
     
     void print(std::string);
     

@@ -72,13 +72,14 @@ Matrix4 Matrix4::multiply(Matrix4 a)
 {
     Matrix4 b;
     
+    //Implement a more performant Matrix * Matrix multiplication
+    
     //The current implementation below is not very efficient:
     //It allocates an additional 8 vectors on the stack and calls their constructors
     //It also calls off to additional functions (which create even more vectors!)
     //Which results in a lot of time being wasted on memory operations
     //This is bad, really bad, ultra bad D:
     
-    //Implement a more performant Matrix * Matrix multiplication
     //Hint: Loops!
     //Hint for the ambitious: SIMD!
     
@@ -222,19 +223,44 @@ Matrix4 Matrix4::inverse(void)
 {
     Matrix4 b;
     
+    //Not required
     //Calculate the inverse of this matrix
     
     return b;
 }
 
-Matrix4 Matrix4::orthoNormalInverse(void)
+Matrix4 Matrix4::rigidInverse(void)
 {
     Matrix4 b;
     
-    //Calculate the inverse of this matrix with the assumption that it is ortho-normal
+    //Project 2
+    //Calculate the inverse of this matrix with the assumption that it is a rigid transformation
     //This will be useful when implementing cameras!
     
     return b;
+}
+
+
+Matrix4 Matrix4::makePerspectiveProjection(float fov, float width, float height, float near, float far)
+{
+    identity();
+    
+    //Project 3
+    //Make this matrix a perspectice project matrix using fov, width, height, near and far
+    //See the lecture slides for details
+    
+    return *this;
+}
+
+Matrix4 Matrix4::makeViewport(float xmin, float xmax, float ymin, float ymax)
+{
+    identity();
+    
+    //Project 3
+    //Make this matrix a viewport matrix using xmin, xmax, ymin, and ymax
+    //See the lecture slides for details
+    
+    return *this;
 }
 
 void Matrix4::print(std::string comment)

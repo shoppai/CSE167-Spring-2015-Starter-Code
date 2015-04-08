@@ -10,7 +10,6 @@
 #include "math.h"
 #include <sstream>
 #include <fstream>
-#include <vector>
 
 #define deleteVector(__vect__) do {\
                                    iter = __vect__->begin();\
@@ -22,10 +21,10 @@
 
 OBJObject::OBJObject(std::string filename) : Drawable()
 {
-    this->vertices = new std::list<Vector3*>();
-    this->normals = new std::list<Vector3*>();
-    this->texcoords = new std::list<Vector3*>();
-    this->faces = new std::list<Face>();
+    this->vertices = new std::vector<Vector3*>();
+    this->normals = new std::vector<Vector3*>();
+    this->texcoords = new std::vector<Vector3*>();
+    this->faces = new std::vector<Face>();
     
     parse(filename);
 }
@@ -33,8 +32,8 @@ OBJObject::OBJObject(std::string filename) : Drawable()
 OBJObject::~OBJObject()
 {
     //Delete any dynamically allocated memory/objects here
-    std::list<Vector3*>::iterator iter;
-    std::list<Vector3*>::iterator end;
+    std::vector<Vector3*>::iterator iter;
+    std::vector<Vector3*>::iterator end;
     
     deleteVector(vertices);
     deleteVector(normals);
@@ -60,13 +59,9 @@ void OBJObject::draw(DrawData& data)
     //  Look up the vertices, normals (if they exists), and texcoords (if they exist)
     //  Draw them as triplets:
     
-    //      glTex(face.ts[0])
-    //      glNorm(face.ns[0])
-    //      glVert(face.vs[0])
-    
-    //      glTex(face.ts[1])
-    //      glNorm(face.ns[1])
-    //      glVert(face.vs[1])
+    //      glTex(texcoords->at(face.ts[0]))
+    //      glNorm(normals->at(face.ns[0]))
+    //      glVert(vertices->at(face.vs[0]))
     //      Etc.
     //
     
@@ -88,8 +83,6 @@ void OBJObject::parse(std::string& filename)
     std::vector<std::string> tokens;
     std::string token;
     
-    std::list<double> dubs;
-    
     int lineNum = 0;
     
     
@@ -100,7 +93,7 @@ void OBJObject::parse(std::string& filename)
     {
         //Progress
         if(++lineNum % 10000 == 0)
-            std::cout << "At line" << lineNum << std::endl;
+            std::cout << "At line " << lineNum << std::endl;
         
         //Split a line into tokens by delimiting it on spaces
         //"Er Mah Gerd" becomes ["Er", "Mah", "Gerd"]

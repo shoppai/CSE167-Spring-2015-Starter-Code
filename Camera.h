@@ -27,7 +27,7 @@ public:
     Matrix4& getMatrix(void);
     Matrix4& getInverseMatrix(void);
     
-    void set(Vector3& d, Vector3& e, Vector3& up);
+    void set(Vector3&, Vector3&, Vector3&);
     
 };
 

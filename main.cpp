@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
     //Math Test Bench
     MathTestBench::runTests();
     
+    //GLUT and OpenGL Configuration
     glutInit(&argc, argv);                                      //Initialize GLUT
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);   //Open an OpenGL context with double buffering, RGB colors, and depth buffering
     glutInitWindowSize(Window::width, Window::height);          //Set initial window size
