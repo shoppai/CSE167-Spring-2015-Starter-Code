@@ -9,9 +9,9 @@
 
 struct Face
 {
-    int vs[3];
-    int ns[3];
-    int ts[3];
+    int vertexIndices[3];
+    int normalIndices[3];
+    //Add more members as necessary
 };
 
 class OBJObject : public Drawable
@@ -22,8 +22,7 @@ protected:
     //Storage vectors
     std::vector<Vector3*>* vertices;
     std::vector<Vector3*>* normals;
-    std::vector<Vector3*>* texcoords;
-    std::vector<Face>* faces;
+    std::vector<Face*>* faces;
     
     //Helper functions
     std::vector<std::string>& split(const std::string&, char, std::vector<std::string>&);

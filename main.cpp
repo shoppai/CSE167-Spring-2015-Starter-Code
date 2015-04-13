@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
     
     glEnable(GL_COLOR_MATERIAL);                                //Enable color materials
     glEnable(GL_LIGHTING);                                      //Enable lighting
+    glEnable(GL_NORMALIZE);                                     //Auto normalize surface normals
     
     //Register callback functions:
     glutDisplayFunc(Window::displayCallback);

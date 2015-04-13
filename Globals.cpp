@@ -1,10 +1,10 @@
 #include "Globals.h"
 
-Camera Globals::camera = Camera();
+Camera Globals::camera;
 
-Cube Globals::cube = Cube(10.0);
+Cube Globals::cube(10.0);
 
-Light Globals::light = Light();
+Light Globals::light;
 
-DrawData Globals::drawData = DrawData();
-UpdateData Globals::updateData = UpdateData();
+DrawData Globals::drawData;
+UpdateData Globals::updateData;

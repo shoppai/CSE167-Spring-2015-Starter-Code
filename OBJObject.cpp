@@ -11,7 +11,9 @@
 #include <sstream>
 #include <fstream>
 
-#define deleteVector(__vect__) do {\
+#define deleteVector(__type__, __vect__) do {\
+                                   std::vector<__type__>::iterator iter; \
+                                   std::vector<__type__>::iterator end; \
                                    iter = __vect__->begin();\
                                    end = __vect__->end();\
                                    while(iter != end) delete (*(iter++));\
@@ -23,8 +25,7 @@ OBJObject::OBJObject(std::string filename) : Drawable()
 {
     this->vertices = new std::vector<Vector3*>();
     this->normals = new std::vector<Vector3*>();
-    this->texcoords = new std::vector<Vector3*>();
-    this->faces = new std::vector<Face>();
+    this->faces = new std::vector<Face*>();
     
     parse(filename);
 }
@@ -32,14 +33,10 @@ OBJObject::OBJObject(std::string filename) : Drawable()
 OBJObject::~OBJObject()
 {
     //Delete any dynamically allocated memory/objects here
-    std::vector<Vector3*>::iterator iter;
-    std::vector<Vector3*>::iterator end;
     
-    deleteVector(vertices);
-    deleteVector(normals);
-    deleteVector(texcoords);
-    
-    delete faces;
+    deleteVector(Vector3*, vertices);
+    deleteVector(Vector3*, normals);
+    deleteVector(Face*, faces);
 }
 
 void OBJObject::draw(DrawData& data)
@@ -56,12 +53,11 @@ void OBJObject::draw(DrawData& data)
     
     //Loop through the faces
     //For each face:
-    //  Look up the vertices, normals (if they exists), and texcoords (if they exist)
+    //  Look up the vertices, normals (if they exist), and texcoords (if they exist)
     //  Draw them as triplets:
     
-    //      glTex(texcoords->at(face.ts[0]))
-    //      glNorm(normals->at(face.ns[0]))
-    //      glVert(vertices->at(face.vs[0]))
+    //      glNorm(normals->at(face.normalIndices[0]))
+    //      glVert(vertices->at(face.vertexIndices[0]))
     //      Etc.
     //
     
@@ -107,6 +103,7 @@ void OBJObject::parse(std::string& filename)
             float x = std::stof(tokens.at(1));
             float y = std::stof(tokens.at(2));
             float z = std::stof(tokens.at(3));
+            
             vertices->push_back(new Vector3(x, y, z));
         }
         else if(tokens.at(0).compare("vn") == 0)
@@ -115,13 +112,13 @@ void OBJObject::parse(std::string& filename)
         }
         else if(tokens.at(0).compare("f") == 0)
         {
-            Face face;
+            Face* face = new Face;
             
             //Parse the face line
             
             faces->push_back(face);
         }
-        else if(tokens.at(0).compare("how does I are c++?!?!!") == 0)
+        else if(tokens.at(0).compare("How does I are C++?!?!!") == 0)
         {
             //Parse as appropriate
             //There are more line types than just the above listed

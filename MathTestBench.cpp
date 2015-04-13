@@ -76,7 +76,7 @@ void MathTestBench::runTests()
     matrix4Passes += (++matrix4Tests, ((int)test_m4_makeTranslate_v3()));
     matrix4Passes += (++matrix4Tests, ((int)test_m4_transpose()));
     //matrix4Passes += (++matrix4Tests, ((int)test_m4_inverse()));
-    //matrix4Passes += (++matrix4Tests, ((int)test_m4_orthoNormalInverse()));
+    //matrix4Passes += (++matrix4Tests, ((int)test_m4_rigidInverse()));
     printTestsPassedLine("Matrix4 Tests Overall", matrix4Passes, matrix4Tests);
     std::cout << std::endl;
     
@@ -691,7 +691,7 @@ bool MathTestBench::test_m4_inverse(void)
     return pass;
 }
 
-bool MathTestBench::test_m4_orthoNormalInverse(void)
+bool MathTestBench::test_m4_rigidInverse(void)
 {
     bool pass = 0x0;
     

@@ -57,7 +57,7 @@ private:
     static bool test_m4_makeTranslate_v3(void);
     static bool test_m4_transpose(void);
     static bool test_m4_inverse(void);
-    static bool test_m4_orthoNormalInverse(void);
+    static bool test_m4_rigidInverse(void);
     
 public:
     
