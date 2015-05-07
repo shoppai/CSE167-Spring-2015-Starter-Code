@@ -44,8 +44,8 @@ void Light::bind(int id)
     glLightfv(GL_LIGHT0 + bindID, GL_SPECULAR, specularColor.ptr());
     
     //Configure the attenuation properties of the light
-    //Constant Attenuation
-    //Linear Attenuation
+    //Add support for Constant Attenuation
+    //Add support for Linear Attenuation
     glLightf(GL_LIGHT0 + bindID, GL_QUADRATIC_ATTENUATION, quadraticAttenuation);
     
     //Position the light
