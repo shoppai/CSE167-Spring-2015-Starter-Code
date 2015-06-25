@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
     glEnable(GL_LIGHTING);                                      //Enable lighting
     glEnable(GL_NORMALIZE);                                     //Auto normalize surface normals
     glEnable(GL_TEXTURE_2D);                                    //Enable 2D textures
+    glLightModelf(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);        //Enable Local Viewer Light Model
     
     //Register callback functions:
     glutDisplayFunc(Window::displayCallback);
@@ -46,6 +47,14 @@ int main(int argc, char *argv[])
     //Register the callback for the keyboard function keys
     //Register the callback for the mouse
     //Register the callback for the mouse motion
+    //Register the callback for the mouse passive motion
+    
+    //Print Shader Debug Information:
+    printf("%s\n%s\n",
+           glGetString(GL_RENDERER),  // e.g. Intel HD Graphics 3000 OpenGL Engine
+           glGetString(GL_VERSION)    // e.g. 3.2 INTEL-8.0.61
+           );
+    std::printf("Supported GLSL version is %s.\n", (char *)glGetString(GL_SHADING_LANGUAGE_VERSION));
     
     //Initialize the Window:
     //The body of this function is a great place to load textures, shaders, etc.
