@@ -11,7 +11,7 @@ class Light
     
 protected:
     
-    int bindID = -1;
+    int bindID;
     
 public:
     

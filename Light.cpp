@@ -11,6 +11,8 @@
 
 Light::Light()
 {
+    bindID = -1;
+    
     ambientColor = Color::ambientDefault();
     diffuseColor = Color::diffuseDefault();
     specularColor = Color::specularDefault();
