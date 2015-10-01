@@ -142,6 +142,9 @@ Vector3 Matrix4::multiply(Vector3 a)
     
     //Implement Matrix * Vector3 multiplication
     //Assume the 4th component is 0
+    Vector4 x =  a.toVector4(0);
+    Vector4 y = multiply(x);
+    b = y.toVector3();   
     
     return b;
 }
@@ -156,6 +159,10 @@ Matrix4 Matrix4::makeRotateX(float angle)
     identity();
     
     //Configure this matrix to be a rotation about the X-Axis by 'angle' radians
+    m[1][1] = cos(angle);
+    m[1][2] = sin(angle);
+    m[2][1] = -sin(angle);
+    m[2][2] = cos(angle);
     
     return *this;
 }
@@ -164,10 +171,10 @@ Matrix4 Matrix4::makeRotateY(float angle)
 {
     identity();
     
-	m[0][0] = cos(angle);
-	m[0][2] = -sin(angle);
-	m[2][0] = sin(angle);
-	m[2][2] = cos(angle);
+    m[0][0] = cos(angle);
+    m[0][2] = -sin(angle);
+    m[2][0] = sin(angle);
+    m[2][2] = cos(angle);
     
     return *this;
 }
@@ -177,6 +184,10 @@ Matrix4 Matrix4::makeRotateZ(float angle)
     identity();
     
     //Configure this matrix to be a rotation about the Z-Axis by 'angle' radians
+    m[0][0] = cos(angle);
+    m[0][1] = sin(angle);
+    m[1][0] = -sin(angle);
+    m[1][1] = cos(angle);
     
     return *this;
 }
@@ -186,6 +197,15 @@ Matrix4 Matrix4::makeRotateArbitrary(Vector3 a, float angle)
     identity();
     
     //Configure this matrix to be a rotation about the 'a' axis by 'angle' radians
+    m[0][0] = 1 + (1 - cos(angle)) * ((a[0] * a[0]) - 1);
+    m[0][1] = (a[2] * sin(angle)) + (1 - cos(angle)) * a[1] * a[0];
+    m[0][2] = (-1 * a[1]) * sin(angle) + (1 - cos(angle)) *a[2] * a[0];
+    m[1][0] = (-1 * a[2]) * sin(angle) + (1 - cos(angle)) *a[0] * a[1];
+    m[1][1] = 1 + (1 - cos(angle)) * ((a[1] * a[1]) - 1);
+    m[1][2] = a[0] * sin(angle) + (1 - cos(angle)) * a[2] * a[1];
+    m[2][0] = a[1] * sin(angle) + (1 - cos(angle)) * a[0] * a[2];
+    m[2][1] = (-1 * a[0]) * sin(angle) + (1 - cos(angle)) *a[1] * a[2];
+    m[2][2] = 1 + (1 - cos(angle)) * ((a[2] * a[2]) - 1);    
     
     return *this;
 }
@@ -200,6 +220,9 @@ Matrix4 Matrix4::makeScale(float sx, float sy, float sz)
     identity();
     
     //Configure this matrix to be a sclaing by sx, sy, sz
+    m[0][0] = sx;
+    m[1][1] = sy;
+    m[2][2] = sz;
 
     return *this;
 }
@@ -209,6 +232,9 @@ Matrix4 Matrix4::makeTranslate(float x, float y, float z)
     identity();
     
     //Configure this matrix to be a translation by vector 'a'
+    m[3][0] = x;
+    m[3][1] = y;
+    m[3][2] = z;
     
     return *this;
 }
