@@ -82,7 +82,8 @@ Matrix4 Matrix4::multiply(Matrix4 a)
     
     //Hint: Loops!
     //Hint for the ambitious: SIMD!
-    
+ 
+ /*   
     Vector4 row1(m[0][0], m[1][0], m[2][0], m[3][0]);
     Vector4 row2(m[0][1], m[1][1], m[2][1], m[3][1]);
     Vector4 row3(m[0][2], m[1][2], m[2][2], m[3][2]);
@@ -97,7 +98,17 @@ Matrix4 Matrix4::multiply(Matrix4 a)
              row1.dot(col2), row2.dot(col2), row3.dot(col2), row4.dot(col2),
              row1.dot(col3), row2.dot(col3), row3.dot(col3), row4.dot(col3),
              row1.dot(col4), row2.dot(col4), row3.dot(col4), row4.dot(col4) );
-
+             
+   */          
+   
+    for (int rows = 0; rows < 4; rows++) {
+	for (int cols = 0; cols < 4; cols++) {
+	    for (int index = 0; index < 4; index++) {
+		b.m[cols][rows] += m[index][rows] * a.m[cols][index];
+            }
+	}
+    }
+	
     return b;
 }
 
@@ -111,6 +122,11 @@ Vector4 Matrix4::multiply(Vector4 a)
     Vector4 b;
     
     //Implement Matrix * Vector4 multiplication
+    for (int rows = 0; rows < 4; rows++){
+    	for (int index = 0; index < 4; index++){
+    	    b[rows] += m[index][rows] * a[index];
+    	}
+    }
     
     return b;
 }
