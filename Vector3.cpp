@@ -173,9 +173,9 @@ Vector3 Vector3::normalize(void)
     
     if (magnitude != 0){
         float x = m[0] / magnitude;
-	    float y = m[1] / magnitude;
-		float z = m[2] / magnitude;
-		b.set(x, y, z);
+        float y = m[1] / magnitude;
+        float z = m[2] / magnitude;
+        b.set(x, y, z);
     }    
     
     return b;
