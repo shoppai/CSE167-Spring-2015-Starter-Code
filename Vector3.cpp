@@ -113,6 +113,7 @@ Vector3 Vector3::multiply(Vector3 a)
     Vector3 b;
     
     //Coomponent-wise multiplication
+    b.set(m[0]*a[0], m[1]*a[1], m[2]*a[2]);
     
     return b;
 }
@@ -126,9 +127,9 @@ Vector3 Vector3::operator * (Vector3 a)
 float Vector3::dot(Vector3 a)
 {
     // Implementation
+    float result = (a[0] * m[0]) + (a[1] * m[1]) + (a[2] * m[2]);
     
-    
-    return 0.0;
+    return result;
 }
 
 Vector3 Vector3::cross(Vector3 a)
@@ -136,6 +137,11 @@ Vector3 Vector3::cross(Vector3 a)
     Vector3 b;
     
     // Implementation
+    float x = (m[1] * a[2]) - (m[2] * a[1]);
+    float y = (m[2] * a[0]) - (m[0] * a[2]);
+    float z - (m[0] * a[1]) - (m[1] * a[0]);
+    
+    b.set(x, y, z);
     
     return b;
 }
@@ -143,23 +149,34 @@ Vector3 Vector3::cross(Vector3 a)
 float Vector3::angle(Vector3 a)
 {
     // Implementation
+    float dot = dot(a);
+    float magnitude = magnitude() * magnitude();
+    float angle = acos(dot / magnitude);
     
-    return 0.0;
+    return angle;
 }
 
 float Vector3::magnitude(void)
 {
     // Implementation
-    float result;
+    float result = (m[0] * m[0]) + (m[1] * m[1]) + (m[2] * m[2]);
     
-    return 0.0;
+    return result;
 }
 
 Vector3 Vector3::normalize(void)
 {
     Vector3 b;
     
-    //
+    // Implementation
+    float magnitude = magnitude();
+    
+    if (magnitude != 0){
+        float x = m[0] / magnitude;
+	    float y = m[1] / magnitude;
+		float z = m[2] / magnitude;
+		b.set(x, y, z);
+    }    
     
     return b;
 }
