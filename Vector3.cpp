@@ -47,7 +47,8 @@ Vector3 Vector3::add(Vector3 a)
 {
     Vector3 b;
     
-    //
+    // Implementation
+    b.set(b[0] + a[0], b[1] + a[1], b[2] + a[2]);
     
     return b;
 }
@@ -61,7 +62,8 @@ Vector3 Vector3::subtract(Vector3 a)
 {
     Vector3 b;
     
-    //
+    // Implementation
+    b.set(b[0] - a[0], b[1] - a[1], b[2] - a[2]);
     
     return b;
 }
@@ -75,7 +77,8 @@ Vector3 Vector3::negate(void)
 {
     Vector3 b;
     
-    //
+    // Implementation
+    b.set(-1*b[0], -1*b[1], -1*b[2]);
     
     return b;
 }
