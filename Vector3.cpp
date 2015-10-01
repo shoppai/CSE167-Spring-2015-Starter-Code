@@ -87,7 +87,8 @@ Vector3 Vector3::scale(float s)
 {
     Vector3 b;
     
-    //
+    // Implementation
+    b.set(s*b[0], s*b[1], s*b[2]);
     
     return b;
 }
@@ -96,7 +97,8 @@ Vector3 Vector3::multiply(float a)
 {
     Vector3 b;
     
-    //
+    // Implementation
+    b.set(a*b[0], a*b[1], a*b[2]);
     
     return b;
 }
@@ -123,7 +125,8 @@ Vector3 Vector3::operator * (Vector3 a)
 
 float Vector3::dot(Vector3 a)
 {
-    //
+    // Implementation
+    
     
     return 0.0;
 }
@@ -132,21 +135,22 @@ Vector3 Vector3::cross(Vector3 a)
 {
     Vector3 b;
     
-    //
+    // Implementation
     
     return b;
 }
 
 float Vector3::angle(Vector3 a)
 {
-    //
+    // Implementation
     
     return 0.0;
 }
 
 float Vector3::magnitude(void)
 {
-    //
+    // Implementation
+    float result;
     
     return 0.0;
 }
